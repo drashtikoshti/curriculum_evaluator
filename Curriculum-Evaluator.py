@@ -32,6 +32,10 @@ def openfile():
                                                           title="Select a CSV File",
                                                           filetypes=(("csv files", "*.csv"),
                                                                      ("all files", "*.*")))
+    text_box.delete("1.0", tk.END)
+    df = getfiledata()
+    text_box.insert(tk.END, "\n\nRead Data from selected CSV\n\n\n")
+    text_box.insert(tk.END, df)
     return root.filename
 
 def getfiledata():
